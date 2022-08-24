@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/phili/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/web/listStudents.jsp</file>
+            <file>file:/C:/Users/phili/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/web/listCourses.jsp</file>
+            <file>file:/C:/Users/phili/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/src/java/model/Student.java</file>
+            <file>file:/C:/Users/phili/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/src/java/controllers/StudentController.java</file>
+            <file>file:/C:/Users/phili/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/src/java/model/Course.java</file>
+        </group>
     </open-files>
 </project-private>
