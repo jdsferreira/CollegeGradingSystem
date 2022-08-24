@@ -14,22 +14,22 @@
     </head>
     <body>
         <table>
-        <tr>
-        <td>Id</td>
-        <td>Prénom</td>
-        <td>Nom</td>
-        <td>Adresse</td>
-        <td>Ville</td>
-        </tr>
-        <c:forEach var="student" items = "${listStudents}">
-        <tr>
-        <td>${student.studentId}</td>
-        <td>${student.firstName}</td>
-        <td>${student.lastName}</td>
-        <td>${student.address}</td>
-        <td>${student.city}</td>
-        </tr>
-        </c:forEach>
+            <tr>
+                <td>Id</td>
+                <td>Prénom</td>
+                <td>Nom</td>
+                <td>Adresse</td>
+                <td>Ville</td>
+            </tr>
+            <c:forEach var="student" items = "${listStudents}">
+                <tr>
+                    <td>${student.studentId}</td>
+                    <td>${student.firstName}</td>
+                    <td>${student.lastName}</td>
+                    <td>${student.address}</td>
+                    <td>${student.city}</td>
+                </tr>
+            </c:forEach>
         </table>
     </body>
 </html>

@@ -10,6 +10,27 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <div>
+            <form action="CourseController" method ="post">
+                <table>
+                    <tr>
+                        <td>Id: </td>
+                        <td><input type="text" name="courseId">    </td>
+                    </tr>
+                    <tr>
+                        <td>Nom: </td>
+                        <td><input type="text" name="courseName">    </td>
+                    </tr>
+                    <tr>
+                        <td>Nombre de crédit: </td>
+                        <td><input type="text" name="creditNumber">    </td>
+                    </tr>
+                    <tr>
+                        <td>     </td>
+                        <td><input type="submit" value="save">    </td>
+                    </tr>
+                </table>
+            </form>
+        </div>   
     </body>
 </html>
