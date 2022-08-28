@@ -19,19 +19,11 @@ CREATE TABLE student (
 -- Contrainte de la clé primaire
 ALTER TABLE student ADD CONSTRAINT pk_student_id PRIMARY KEY ( studentid );
 
-INSERT INTO student (
-    studentid,
-    firstname,
-    lastname,
-    address,
-    city
-) VALUES (
-    1,
-    'Vanessa',
-    'McDonald',
-    'F',
-    'Edmonton'
-);
+INSERT INTO student (studentid, firstname, lastname, address,city) VALUES (1,'Vanessa','McDonald','10838 114 St NW','Edmonton');
+INSERT INTO student (studentid, firstname, lastname, address,city) VALUES(2,'Andrew','Fuller','6350 Av. des Erables','Montreal');
+INSERT INTO student (studentid, firstname, lastname, address,city) VALUES(3,'Janet','Leverling','27 Rue Principale O','Ascension');
+INSERT INTO student (studentid, firstname, lastname, address,city) VALUES(4,'Margaret','Peacock','43 Bell St N','Ottawa');
+INSERT INTO student (studentid, firstname, lastname, address,city) VALUES(5,'Steven','Buchanan','72 Courton Dr','Toronto');
 
 COMMIT;
 
@@ -47,15 +39,10 @@ CREATE TABLE course (
 -- Contrainte de la clé primaire
 ALTER TABLE course ADD CONSTRAINT pk_course_id PRIMARY KEY ( courseid );
 
-INSERT INTO course (
-    courseid,
-    coursename,
-    creditnumber
-) VALUES (
-    10000,
-    'Biologie',
-    '3'
-);
+INSERT INTO course (courseid, coursename, creditnumber)
+ VALUES (10000,'Biologie', 3);
+INSERT INTO course (courseid, coursename, creditnumber)
+ VALUES (20000,'Mathematique', 2);
 
 COMMIT;
 
@@ -74,23 +61,35 @@ ALTER TABLE grade ADD CONSTRAINT pk_result_id PRIMARY KEY ( studentid );
 
 ALTER TABLE grade
     ADD CONSTRAINT fk_student_id FOREIGN KEY ( studentid )
-        REFERENCES student ( studentid );
+        REFERENCES student ( studentid ) ON DELETE CASCADE;
+
+ALTER TABLE grade DISABLE CONSTRAINT pk_result_id;
+
 
 ALTER TABLE grade
     ADD CONSTRAINT fk_course_id FOREIGN KEY ( courseid )
-        REFERENCES course ( courseid );
+        REFERENCES course ( courseid ) ON DELETE CASCADE;
 
-INSERT INTO grade (
-    studentid,
-    courseid,
-    semester,
-    score
-) VALUES (
-    1,
-    '10000',
-    'H-2022',
-    '80'
-);
+INSERT INTO grade (studentid, courseid, semester, score) 
+VALUES (1, 10000,'H-2022',80);
+INSERT INTO grade (studentid, courseid, semester, score) 
+VALUES (1, 20000,'H-2022',90);
+INSERT INTO grade (studentid, courseid, semester, score) 
+VALUES (2, 10000,'H-2022',89);
+INSERT INTO grade (studentid, courseid, semester, score) 
+VALUES (2, 20000,'H-2022',87);
+INSERT INTO grade (studentid, courseid, semester, score) 
+VALUES (3, 10000,'H-2022',67);
+INSERT INTO grade (studentid, courseid, semester, score) 
+VALUES (3, 20000,'H-2022',99);
+INSERT INTO grade (studentid, courseid, semester, score) 
+VALUES (4, 10000,'H-2022',59);
+INSERT INTO grade (studentid, courseid, semester, score) 
+VALUES (4, 20000,'H-2022',66);
+INSERT INTO grade (studentid, courseid, semester, score) 
+VALUES (5, 10000,'H-2022',76);
+INSERT INTO grade (studentid, courseid, semester, score) 
+VALUES (5, 20000,'H-2022',84);
 
 COMMIT;
 
