@@ -31,6 +31,8 @@ public class CourseDaoImp implements CourseDao {
             preparedStatement.setInt(1, course.getCourseId());
             preparedStatement.setString(2, course.getCourseName());
             preparedStatement.setInt(3, course.getCreditNumber());
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

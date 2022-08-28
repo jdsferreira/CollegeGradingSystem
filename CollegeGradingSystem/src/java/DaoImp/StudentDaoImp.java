@@ -26,13 +26,15 @@ public class StudentDaoImp implements StudentDao {
         PreparedStatement preparedStatement;
 
         try {
-            String createQuery = "INSERT INTO student (studentid, firstname, lastname, address,city) VALUES (?,?,?,?,?)";
+            String createQuery = "INSERT INTO student (studentid, firstname, lastname, address, city) VALUES (?,?,?,?,?)";
             preparedStatement = connection.prepareStatement(createQuery);
             preparedStatement.setInt(1, student.getStudentId());
             preparedStatement.setString(2, student.getFirstName());
             preparedStatement.setString(3, student.getLastName());
             preparedStatement.setString(4, student.getAddress());
             preparedStatement.setString(5, student.getCity());
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

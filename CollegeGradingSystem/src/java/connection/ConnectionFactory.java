@@ -17,8 +17,8 @@ public class ConnectionFactory {
     private static Connection connection = null;
 
     public static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
-    public static final String USER = "HR";
-    public static final String PASS = "HR";
+    public static final String USER = "hr";
+    public static final String PASS = "hrpass";
 
     public static java.sql.Connection getConnection() {
         try {
