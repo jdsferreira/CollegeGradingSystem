@@ -3,9 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/phili/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/src/java/model/Student.java</file>
             <file>file:/C:/Users/phili/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/src/java/model/Result.java</file>
             <file>file:/C:/Users/phili/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/src/java/model/Course.java</file>
+=======
+            <file>file:/C:/Users/jdsfe/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/src/java/model/Grade.java</file>
+            <file>file:/C:/Users/jdsfe/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/src/java/DaoImp/GradeDaoImp.java</file>
+            <file>file:/C:/Users/jdsfe/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/src/java/DaoImp/StudentDaoImp.java</file>
+            <file>file:/C:/Users/jdsfe/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/src/java/interfaceDao/GradeDao.java</file>
+            <file>file:/C:/Users/jdsfe/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/src/java/interfaceDao/StudentDao.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>

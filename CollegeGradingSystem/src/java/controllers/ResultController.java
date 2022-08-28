@@ -14,7 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Result;
+import model.Grade;
 
 /**
  *
@@ -23,7 +23,7 @@ import model.Result;
 @WebServlet(urlPatterns = {"/ResultController"})
 public class ResultController extends HttpServlet {
 
-List<Result> listResults = new ArrayList<>();
+List<Grade> listResults = new ArrayList<>();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,12 +42,12 @@ List<Result> listResults = new ArrayList<>();
         String session1 = request.getParameter("session");
         int mark1 = Integer.parseInt(request.getParameter("mark"));
 
-        Result result1 = new Result();
+        Grade result1 = new Grade();
         
         result1.setStudentId(studentId1);
         result1.setCourseId(courseId1);
-        result1.setSession(session1);
-        result1.setMark(mark1);
+        result1.setSemester(session1);
+        result1.setScore(mark1);
         
         listResults.add(result1);
         
