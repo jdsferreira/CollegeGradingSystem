@@ -10,12 +10,21 @@ package model;
  */
 public class Grade {
 
+    private int gradeId;
     private int studentId;
     private int courseId;
     private String semester;
     private int score;
 
     public Grade() {
+    }
+
+    public void setGradeId(int gradeId) {
+        this.gradeId = gradeId;
+    }
+
+    public int getGradeId() {
+        return gradeId;
     }
 
     public int getStudentId() {
@@ -54,4 +63,5 @@ public class Grade {
     public String toString() {
         return "Student ID " + studentId + "Course ID " + courseId + " | Session: " + semester + " | Note: " + score;
     }
+
 }

@@ -46,13 +46,13 @@ public class CourseController extends HttpServlet {
             throws ServletException, IOException {
 
         int id1 = Integer.parseInt(request.getParameter("courseId"));
-        String name = request.getParameter("courseName");
+        String name1 = request.getParameter("courseName");
         int creditNumber1 = Integer.parseInt(request.getParameter("creditNumber"));
 
         Course course1 = new Course();
         
         course1.setCourseId(id1);
-        course1.setCourseName(name);
+        course1.setCourseName(name1);
         course1.setCreditNumber(creditNumber1);
         
         listCourses.add(course1);
