@@ -28,6 +28,8 @@
                     <td>${student.lastName}</td>
                     <td>${student.address}</td>
                     <td>${student.city}</td>
+                    <td><a href="<c:url value='/StudentController?x=${student.studentId}&act=delete'/>">Enlever</a></td>
+                    <td><a href="<c:url value='/StudentController?x=${student.studentId}&act=update'/>">Modifier</a></td>
                 </tr>
             </c:forEach>
         </table>

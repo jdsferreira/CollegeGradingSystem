@@ -4,6 +4,7 @@
  */
 package controllers;
 
+import DaoImp.StudentDaoImp;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -22,6 +23,15 @@ import model.Student;
 @WebServlet(name = "StudentController", urlPatterns = {"/StudentController"})
 public class StudentController extends HttpServlet {
 
+    StudentDaoImp dao;
+    private int nb;
+
+    @Override
+    public void init() {
+        dao = new StudentDaoImp();
+        nb = 0;
+    }
+
     List<Student> listStudents = new ArrayList<>();
 
     /**
@@ -36,9 +46,10 @@ public class StudentController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        /*
         int id1 = Integer.parseInt(request.getParameter("id"));
         String firstName1 = request.getParameter("firstName");
-        String lastName1 = request.getParameter("lastName");
+        String lastName1 = request.getParameter("lasttName");
         String address1 = request.getParameter("address");
         String city1 = request.getParameter("city");
         Student student1 = new Student();
@@ -48,9 +59,10 @@ public class StudentController extends HttpServlet {
         student1.setLastName(lastName1);
         student1.setAddress(address1);
         student1.setCity(city1);
-        
-        listStudents.add(student1);
-        
+         */
+        // listStudents.add(student1);
+        listStudents = dao.findAll();
+
         request.setAttribute("listStudents", listStudents);
 
         getServletContext().getRequestDispatcher("/listStudents.jsp").
@@ -69,12 +81,20 @@ public class StudentController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        nb++;
+        int id = Integer.parseInt(request.getParameter("x"));
+        String action = request.getParameter("act");
+
+        if (action.equals("delete")) {
+            dao.delete(id);
+            
+        }
         processRequest(request, response);
+
     }
 
-
-
-   /**
+    /**
      * Handles the HTTP <code>POST</code> method.
      *
      * @param request servlet request
@@ -85,12 +105,29 @@ public class StudentController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        nb++;
+
+        int id1 = Integer.parseInt(request.getParameter("id"));
+        String firstName1 = request.getParameter("firstName");
+        String lastName1 = request.getParameter("lasttName");
+        String address1 = request.getParameter("address");
+        String city1 = request.getParameter("city");
+        Student student1 = new Student();
+
+        student1.setStudentId(id1);
+        student1.setFirstName(firstName1);
+        student1.setLastName(lastName1);
+        student1.setAddress(address1);
+        student1.setCity(city1);
+
+        dao.create(student1);
+
         processRequest(request, response);
+
     }
 
-
-
-   /**
+    /**
      * Returns a short description of the servlet.
      *
      * @return a String containing servlet description
