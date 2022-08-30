@@ -50,6 +50,7 @@ COMMIT;
 
 -- SQL - Création de la table : 
 CREATE TABLE grade (
+    gradeid INTEGER NOT NULL,
     studentid INTEGER NOT NULL,
     courseid  INTEGER NOT NULL,
     semester   VARCHAR(50) NOT NULL,
@@ -57,39 +58,36 @@ CREATE TABLE grade (
 );
 
 -- Contrainte de la clé primaire
-ALTER TABLE grade ADD CONSTRAINT pk_result_id PRIMARY KEY ( studentid );
+ALTER TABLE grade ADD CONSTRAINT pk_result_id PRIMARY KEY ( gradeid );
 
 ALTER TABLE grade
     ADD CONSTRAINT fk_student_id FOREIGN KEY ( studentid )
         REFERENCES student ( studentid ) ON DELETE CASCADE;
 
-ALTER TABLE grade DISABLE CONSTRAINT pk_result_id;
-
-
 ALTER TABLE grade
     ADD CONSTRAINT fk_course_id FOREIGN KEY ( courseid )
         REFERENCES course ( courseid ) ON DELETE CASCADE;
 
-INSERT INTO grade (studentid, courseid, semester, score) 
-VALUES (1, 10000,'H-2022',80);
-INSERT INTO grade (studentid, courseid, semester, score) 
-VALUES (1, 20000,'H-2022',90);
-INSERT INTO grade (studentid, courseid, semester, score) 
-VALUES (2, 10000,'H-2022',89);
-INSERT INTO grade (studentid, courseid, semester, score) 
-VALUES (2, 20000,'H-2022',87);
-INSERT INTO grade (studentid, courseid, semester, score) 
-VALUES (3, 10000,'H-2022',67);
-INSERT INTO grade (studentid, courseid, semester, score) 
-VALUES (3, 20000,'H-2022',99);
-INSERT INTO grade (studentid, courseid, semester, score) 
-VALUES (4, 10000,'H-2022',59);
-INSERT INTO grade (studentid, courseid, semester, score) 
-VALUES (4, 20000,'H-2022',66);
-INSERT INTO grade (studentid, courseid, semester, score) 
-VALUES (5, 10000,'H-2022',76);
-INSERT INTO grade (studentid, courseid, semester, score) 
-VALUES (5, 20000,'H-2022',84);
+INSERT INTO grade (gradeid, studentid, courseid, semester, score) 
+VALUES (1,1, 10000,'H-2022',80);
+INSERT INTO grade (gradeid, studentid, courseid, semester, score) 
+VALUES (2,1, 20000,'H-2022',90);
+INSERT INTO grade (gradeid, studentid, courseid, semester, score) 
+VALUES (3,2, 10000,'H-2022',89);
+INSERT INTO grade (gradeid, studentid, courseid, semester, score) 
+VALUES (4,2, 20000,'H-2022',87);
+INSERT INTO grade (gradeid, studentid, courseid, semester, score) 
+VALUES (5,3, 10000,'H-2022',67);
+INSERT INTO grade (gradeid, studentid, courseid, semester, score) 
+VALUES (6,3, 20000,'H-2022',99);
+INSERT INTO grade (gradeid, studentid, courseid, semester, score) 
+VALUES (7,4, 10000,'H-2022',59);
+INSERT INTO grade (gradeid, studentid, courseid, semester, score) 
+VALUES (8,4, 20000,'H-2022',66);
+INSERT INTO grade (gradeid, studentid, courseid, semester, score) 
+VALUES (9,5, 10000,'H-2022',76);
+INSERT INTO grade (gradeid, studentid, courseid, semester, score) 
+VALUES (10,5, 20000,'H-2022',84);
 
 COMMIT;
 
