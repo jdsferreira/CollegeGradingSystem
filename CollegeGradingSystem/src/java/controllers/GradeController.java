@@ -66,6 +66,14 @@ public class GradeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        nb++;
+        int id = Integer.parseInt(request.getParameter("x"));
+        String action = request.getParameter("act");
+
+        if (action.equals("delete")) {
+            dao.delete(id);
+        }
         processRequest(request, response);
     }
 

@@ -24,6 +24,8 @@
                     <td>${course.courseId}</td>
                     <td>${course.courseName}</td>
                     <td>${course.creditNumber}</td>
+                    <td><a href="<c:url value='/CourseController?x=${course.courseId}&act=delete'/>">Enlever</a></td>
+                    <td><a href="<c:url value='/CourseController?x=${course.courseId}&act=update'/>">Modifier</a></td>
                 </tr>
             </c:forEach>
         </table>   
