@@ -78,7 +78,7 @@ public class GradeDaoImp implements GradeDao {
         PreparedStatement preparedStatement;
 
         try {
-            String selectAllQuery = "SELECT * FROM grade ORDER BY ID";
+            String selectAllQuery = "SELECT * FROM grade ORDER BY gradeid";
             preparedStatement = connection.prepareStatement(selectAllQuery);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
