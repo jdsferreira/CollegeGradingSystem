@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/jdsfe/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/web/index.html</file>
-            <file>file:/C:/Users/jdsfe/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/src/java/controllers/StudentController.java</file>
-            <file>file:/C:/Users/jdsfe/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/web/formStudent.html</file>
-            <file>file:/C:/Users/jdsfe/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/web/listStudents.jsp</file>
+            <file>file:/C:/Users/phili/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/web/listStudents.jsp</file>
+            <file>file:/C:/Users/phili/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/web/listCourses.jsp</file>
+            <file>file:/C:/Users/phili/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/src/java/controllers/CourseController.java</file>
+            <file>file:/C:/Users/phili/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/src/java/controllers/GradeController.java</file>
+            <file>file:/C:/Users/phili/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/src/java/controllers/StudentController.java</file>
+            <file>file:/C:/Users/phili/Documents/GitHub/CollegeGradingSystem/CollegeGradingSystem/web/listGrades.jsp</file>
         </group>
     </open-files>
 </project-private>

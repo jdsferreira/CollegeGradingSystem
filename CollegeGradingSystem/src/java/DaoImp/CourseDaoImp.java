@@ -73,7 +73,7 @@ public class CourseDaoImp implements CourseDao {
         PreparedStatement preparedStatement;
 
         try {
-            String selectAllQuery = "SELECT * FROM course ORDER BY ID";
+            String selectAllQuery = "SELECT * FROM course ORDER BY courseid";
             preparedStatement = connection.prepareStatement(selectAllQuery);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {

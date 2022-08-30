@@ -45,18 +45,8 @@ public class CourseController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        int id1 = Integer.parseInt(request.getParameter("courseId"));
-        String name1 = request.getParameter("courseName");
-        int creditNumber1 = Integer.parseInt(request.getParameter("creditNumber"));
+        listCourses = dao.findAll();
 
-        Course course1 = new Course();
-        
-        course1.setCourseId(id1);
-        course1.setCourseName(name1);
-        course1.setCreditNumber(creditNumber1);
-        
-        listCourses.add(course1);
-        
         request.setAttribute("listCourses", listCourses);
 
         getServletContext().getRequestDispatcher("/listCourses.jsp").
@@ -75,6 +65,13 @@ public class CourseController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        nb++;
+        int id = Integer.parseInt(request.getParameter("x"));
+        String action = request.getParameter("act");
+
+        if (action.equals("delete")) {
+            dao.delete(id);
+        }
         processRequest(request, response);
     }
 
@@ -89,19 +86,20 @@ public class CourseController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
 
         int id1 = Integer.parseInt(request.getParameter("courseId"));
         String name = request.getParameter("courseName");
         int creditNumber1 = Integer.parseInt(request.getParameter("creditNumber"));
 
         Course course1 = new Course();
-        
+
         course1.setCourseId(id1);
         course1.setCourseName(name);
         course1.setCreditNumber(creditNumber1);
 
         dao.create(course1);
+
+        processRequest(request, response);
 
     }
 

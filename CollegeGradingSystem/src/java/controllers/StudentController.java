@@ -46,21 +46,6 @@ public class StudentController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        /*
-        int id1 = Integer.parseInt(request.getParameter("id"));
-        String firstName1 = request.getParameter("firstName");
-        String lastName1 = request.getParameter("lasttName");
-        String address1 = request.getParameter("address");
-        String city1 = request.getParameter("city");
-        Student student1 = new Student();
-        
-        student1.setStudentId(id1);
-        student1.setFirstName(firstName1);
-        student1.setLastName(lastName1);
-        student1.setAddress(address1);
-        student1.setCity(city1);
-         */
-        // listStudents.add(student1);
         listStudents = dao.findAll();
 
         request.setAttribute("listStudents", listStudents);

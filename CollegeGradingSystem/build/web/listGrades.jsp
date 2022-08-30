@@ -27,6 +27,8 @@
                     <td>${grade.courseId}</td>
                     <td>${grade.semester}</td>
                     <td>${grade.score}</td>
+                    <td><a href="<c:url value='/GradeController?x=${grade.gradeId}&act=delete'/>">Enlever</a></td>
+                    <td><a href="<c:url value='/GradeController?x=${grade.gradeId}&act=update'/>">Modifier</a></td>
                 </tr>
             </c:forEach>
         </table>   

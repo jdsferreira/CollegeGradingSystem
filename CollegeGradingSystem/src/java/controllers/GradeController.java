@@ -46,20 +46,7 @@ public class GradeController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        int gradeId1 = Integer.parseInt(request.getParameter("gradeId"));
-        int studentId1 = Integer.parseInt(request.getParameter("studentId"));
-        int courseId1 = Integer.parseInt(request.getParameter("courseId"));
-        String semester1 = request.getParameter("semester");
-        int score1 = Integer.parseInt(request.getParameter("score"));
-
-        Grade grade1 = new Grade();
-        grade1.setGradeId(gradeId1);
-        grade1.setStudentId(studentId1);
-        grade1.setCourseId(courseId1);
-        grade1.setSemester(semester1);
-        grade1.setScore(score1);
-
-        listGrades.add(grade1);
+        listGrades = dao.findAll();
 
         request.setAttribute("listGrades", listGrades);
 
@@ -79,6 +66,14 @@ public class GradeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        nb++;
+        int id = Integer.parseInt(request.getParameter("x"));
+        String action = request.getParameter("act");
+
+        if (action.equals("delete")) {
+            dao.delete(id);
+        }
         processRequest(request, response);
     }
 
@@ -93,7 +88,6 @@ public class GradeController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
 
         int gradeId1 = Integer.parseInt(request.getParameter("gradeId"));
         int studentId1 = Integer.parseInt(request.getParameter("studentId"));
@@ -110,6 +104,9 @@ public class GradeController extends HttpServlet {
         grade1.setScore(score1);
 
         dao.create(grade1);
+
+        processRequest(request, response);
+
     }
 
     /**
