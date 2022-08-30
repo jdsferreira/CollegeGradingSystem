@@ -77,7 +77,7 @@ public class StudentDaoImp implements StudentDao {
         PreparedStatement preparedStatement;
 
         try {
-            String selectAllQuery = "SELECT * FROM student ORDER BY ID";
+            String selectAllQuery = "SELECT * FROM student ORDER BY studentid";
             preparedStatement = connection.prepareStatement(selectAllQuery);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
